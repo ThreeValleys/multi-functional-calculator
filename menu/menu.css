@@ -1,0 +1,128 @@
+.menu-grid{
+    background-color: rgba(255, 255, 255, .70);
+    width: 400px;
+    height: 50px;
+}
+
+
+.menu-item{
+    width: 50px;
+    height: 50px;
+	float: left;
+    position: relative;
+}
+
+.menu-item ul button{
+    text-align: left;
+	padding: 5px 0 5px 0;
+	font-size: 25px;
+	text-decoration: none;
+	border-radius: 15px;
+    margin-left: 0px;
+	font-weight: bold;
+    display: inline-block;
+    color: white;
+}
+
+.menu-item ul {
+    background-color:black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+	list-style-type: none;
+	height: 0px;
+	overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 301px;
+    z-index: +2;
+    
+	-webkit-transition: height .5s ease;
+    -moz-transition: height .5s ease;
+    -o-transition: height .5s ease;
+    -ms-transition: height .5s ease;
+    transition: height .5s ease;
+}
+
+.menu-item li{
+    position: relative;
+    right: 40px;
+    width: 301px;
+}
+
+.menu-item li:hover{
+    background-color: rgb(36, 0, 0);
+}
+
+.menu-item li img:hover{
+    background-color: black;
+}
+
+.menu-item ul li button{
+    font-size: 20px;
+    width: 301px; 
+    border-radius: 10px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    padding-left: 10px;
+  }
+
+.menu-btn{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.menu-btn:focus{
+    outline: 0;
+    box-shadow: none!important;
+}
+
+.normal{
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+     transform: rotate(0deg);
+     transition-duration: .75s;
+}
+
+.rotate{
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+     transform: rotate(90deg);
+     transition-duration: .75s;
+}
+
+.menu-calc-type{
+    font-weight: bold;
+    color: black;
+    position: relative;
+    left: 70px;
+    bottom: 35px;
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.custom-li{
+    margin-top: 150px;
+}
+
+#list-items p{
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 20px;
+    justify-content: baseline;
+
+}

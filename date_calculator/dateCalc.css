@@ -1,0 +1,171 @@
+.date-container{
+    display: grid;
+    grid-template-columns: repeat(3, 133.3333px);
+}
+
+#change-date-type-out{
+    margin-top: 10px;
+}
+
+.date-calc-input-area {
+    grid-column: 1 / -1;
+    height: 300px;
+    width: 400px;
+    background-color: rgba(0, 0, 0, .75);
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    color:white;
+  }
+
+  .date-calc-calendar-area {
+    grid-column: 1 / -1;
+    height: 400px;
+    background-color: rgba(0, 0, 0, .75);
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    color:white;
+  }
+
+  .month-year-dsply{
+      width: 200px;
+      margin-left: 10px;
+      display: inline-block;
+  }
+
+  .month-year-dsply p{
+    display: inline-block;
+  }
+  
+  .change-month-btns{
+      display: inline-block;
+      margin-left: 90px;
+  }
+
+  .change-month-btns button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  }
+
+#date-output-area{
+    margin-top: 30px;
+}
+
+#display-main{
+    grid-column: 1 / 5;
+    height: 75px;
+    font-size: 50px;
+}
+
+#display-secondary{
+    grid-column: 1 / 5;
+    height: 50px;
+    font-size: 25px;
+}
+
+#calendar{
+    margin-top: 20px;
+}
+
+#calendar table{
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+}
+
+#calendar-table .aDay{
+    padding: 9px;
+    width: 25%;
+}
+
+.aDay{
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.aDay:hover{
+    border: 2px solid rgb(36, 0, 0);
+    cursor: pointer;
+}
+
+#year-input{
+    width: 60px;
+    position: absolute;
+    
+}
+
+.select-month{
+    margin-top: 150px;
+}
+
+.select-month table{
+    width: 100%;
+    margin-right: 50px;
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+}
+
+.select-month table td{
+    font-size: 30px;
+    padding: 9px;
+    width: 25%;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.select-month table td:hover{
+    border: 2px solid rgb(36, 0, 0);
+    cursor: pointer;
+}
+
+#month-dsply:hover{
+    cursor: pointer;
+}
+
+#year-dsply:hover{
+    cursor: pointer;
+}
+
+.date-calc-input-area label{
+    width: 100%;
+    margin-left: 10px;
+}
+
+#from-date-input{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#from-date-input:hover{
+    cursor: pointer;
+}
+
+#to-date-input{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#to-date-input:hover{
+    cursor: pointer;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+#difference-output{
+    margin-left: 10px;
+}
+
+

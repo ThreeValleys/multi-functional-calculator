@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="menu/menu.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="standard_calculator/standardCalc.css">
+    <link rel="stylesheet" type="text/css" href="temperature_calculator/temperatureCalc.css">
+    <link rel="stylesheet" type="text/css" href="speed_calculator/speedCalc.css">
+    <link rel="stylesheet" type="text/css" href="currency_calculator/currencyCalc.css">
+    <link rel="stylesheet" type="text/css" href="date_calculator/dateCalc.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app-grid">
+        <div class="menu-grid">
+            <div class="menu-item">
+                <button id="menuBtn" onclick="menu()" class="menu-btn normal">▶</button>
+                <label id="label-calc-type" class="menu-calc-type">Standard Calculator</label>
+                <ul id="list-items">
+                    <li><button id="stand-calc" onclick="changeCalc('Standard Calculator','calc-container-id')">Standard Calculator</button></li>
+                    <li><button id="temp-calc" onclick="changeCalc('Temperature','temperature-container-id')">Temperature</button></li>
+                    <li><button id="speed-calc" onclick="changeCalc('Speed','speed-container-id')">Speed</button></li>
+                    <li><button id="currency-calc" onclick="changeCalc('Currency','currency-container-id')">Currency</button></li>
+                    <li><button id="date-calc" onclick="changeCalc('Date Calculator', 'date-container-id')">Date Calculator</button></li>
+                    <li><button onclick="changeCalc('Length')">Length</button></li>
+                    <li><button onclick="changeCalc('Time')">Time</button></li>
+                    <li><button onclick="changeCalc('Volume')">Volume</button></li>
+                    <li><button onclick="changeCalc('Area')">Area</button></li>
+                    <li><button onclick="changeCalc('Data')">Data</button></li>
+                    <li class="custom-li">
+                        <img src="images/image.png" height="300px"> 
+                        <p id="stand-calc-description" style="display: none;">A standard calculator with basic mathematical functions such as addition, subtraction, multiplication, and division.</p>
+                        <p id="tempuriture-calc-description" style="display: none;">A conversion calculator for tempurutures. Included are conversions for celsius, fahrenheit, and kelvin.</p>
+                        <p id="speed-calc-description" style="display: none;">A conversion calculator for speeds. Included are conversions for measurements as small as centimeters per second all the way up to supersonic speeds of mach.</p>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="calc-container-id" class="calc-container" style="display: none;">
+            <div class="calc-output-area">
+                <div data-previous-number id="display-secondary"></div>
+                <div data-current-number id="display-main"></div>
+            </div>
+            <button class="oprtBtn" data-operation>X</button>
+            <button class="oprtBtn" data-operation>÷</button>
+            <button class="clrBtn" data-reset>C</button>
+            <button class="dltBtn" data-delete>⌫</button>
+            <button class="oprtBtn" data-operation>-</button>
+            <button class="oprtBtn" data-operation>+</button>
+            <button class="oprtBtn" data-operation>x²</button>
+            <button class="oprtBtn" data-operation>√</button>
+            <button data-number>1</button>
+            <button data-number>2</button>
+            <button data-number>3</button>
+            <button data-number>4</button>
+            <button data-number>5</button>
+            <button data-number>6</button>
+            <button data-number>7</button>
+            <button data-number>8</button>
+            <button data-number>9</button>
+            <button data-number>0</button>
+            <button data-number>.</button>
+            <button data-pn>+/-</button>
+            <button class="eqlBtn" style="grid-column: span 4" data-equals>=</button>
+            <script src="standard_calculator/calc.js"></script>
+        </div>
+
+        <div id="temperature-container-id" class="temperature-container" style="display: none;">
+            <div class="temp-calc-output-area">
+                <div id="temp-input-area">
+                    <div data-temp-input-display id="display-temp-in" class="temp-input-result">33</div>
+
+                    <input data-temp-in-radio class="temper-radio-input" type="radio" id="input-celsius" name="temperature-type-input" value="celsius">
+                    <label class="temper-radio" for="celsius">Celsius</label>
+
+                    <input data-temp-in-radio class="temper-radio-input" type="radio" id="input-fahrenheit" name="temperature-type-input" value="fahrenheit">
+                    <label class="temper-radio" for="fahrenheit">Fahrenheit</label>
+
+                    <input data-temp-in-radio class="temper-radio-input" type="radio" id="input-kelvin" name="temperature-type-input" value="kelvin">
+                    <label class="temper-radio" for="kelvin">Kelvin</label>
+
+                </div>
+                
+                <div id="temp-output-area">
+                    <div data-temp-output-display id="display-temp-out" class="temp-output-result">0</div>
+
+                    <input data-temp-out-radio class="temper-radio-input" type="radio" id="output-celsius" name="temperature-type-output" value="celsius">
+                    <label class="temper-radio" for="celsius">Celsius</label>
+
+                    <input data-temp-out-radio class="temper-radio-input" type="radio" id="output-fahrenheit" name="temperature-type-output" value="fahrenheit">
+                    <label class="temper-radio" for="fahrenheit">Fahrenheit</label>
+
+                    <input data-temp-out-radio class="temper-radio-input" type="radio" id="output-kelvin" name="temperature-type-output" value="kelvin">
+                    <label class="temper-radio" for="kelvin">Kelvin</label>
+
+                </div>
+            </div>
+            <button></button>
+            <button class="clrBtn" data-temp-reset>C</button>
+            <button class="dltBtn" data-temp-delete>⌫</button>
+            <button data-temp-number>1</button>
+            <button data-temp-number>2</button>
+            <button data-temp-number>3</button>
+            <button data-temp-number>4</button>
+            <button data-temp-number>5</button>
+            <button data-temp-number>6</button>
+            <button data-temp-number>7</button>
+            <button data-temp-number>8</button>
+            <button data-temp-number>9</button>
+            <button data-temp-pn>+/-</button>
+            <button data-temp-number>0</button>
+            <button data-temp-number>.</button>
+            <script src="temperature_calculator/temperatureCalc.js"></script>
+        </div>
+
+        <div id="speed-container-id" class="speed-container" style="display: none;">
+            <div class="speed-calc-output-area">
+                <div id="speed-input-area-id" class="speed-input-area">
+                    <div data-speed-input-display id="display-speed-in" class="speed-input-result">33</div>
+                    <button id="change-speed-type-in" class="changeSpeedTypeInputOutput" onclick="openCloseSpeedTypeInputMenu()">Metres per second ⯆</button>
+                    <div id="speed-input-menu-id" class="speed-type-menu-in" style="display: none;">
+                        <p onclick="changeSpeedInput('Centimetres per second ⯆')">Centimetres per second</p>
+                        <p onclick="changeSpeedInput('Metres per second ⯆')">Metres per second</p>
+                        <p onclick="changeSpeedInput('Kilometres per hour ⯆')">Kilometres per hour</p>
+                        <p onclick="changeSpeedInput('Feet per second ⯆')">Feet per second</p>
+                        <p onclick="changeSpeedInput('Miles per hour ⯆')">Miles per hour</p>
+                        <p onclick="changeSpeedInput('Knots ⯆')">Knots</p>
+                        <p onclick="changeSpeedInput('Mach ⯆')">Mach</p>
+                    </div>
+                </div>
+                
+                <div id="speed-output-area-id" class="speed-output-area">
+                    <div data-speed-output-display id="display-speed-out" class="speed-output-result">0</div>
+                    <button id="change-speed-type-out" class="changeSpeedTypeInputOutput" onclick="openCloseSpeedTypeOutputMenu()">Metres per second ⯆</button>
+                    <div id="speed-output-menu-id" class="speed-type-menu-out" style="display: none;">
+                        <p onclick="changeSpeedOutput('Centimetres per second ⯆')">Centimetres per second</p>
+                        <p onclick="changeSpeedOutput('Metres per second ⯆')">Metres per second</p>
+                        <p onclick="changeSpeedOutput('Kilometres per hour ⯆')">Kilometres per hour</p>
+                        <p onclick="changeSpeedOutput('Feet per second ⯆')">Feet per second</p>
+                        <p onclick="changeSpeedOutput('Miles per hour ⯆')">Miles per hour</p>
+                        <p onclick="changeSpeedOutput('Knots ⯆')">Knots</p>
+                        <p onclick="changeSpeedOutput('Mach ⯆')">Mach</p>
+                    </div>
+                </div>
+            </div>
+            <button></button>
+            <button class="clrBtn" data-speed-reset>C</button>
+            <button class="dltBtn" data-speed-delete>⌫</button>
+            <button data-speed-number>1</button>
+            <button data-speed-number>2</button>
+            <button data-speed-number>3</button>
+            <button data-speed-number>4</button>
+            <button data-speed-number>5</button>
+            <button data-speed-number>6</button>
+            <button data-speed-number>7</button>
+            <button data-speed-number>8</button>
+            <button data-speed-number>9</button>
+            <button></button>
+            <button data-speed-number>0</button>
+            <button data-speed-number>.</button>
+            <script src="speed_calculator/speedCalc.js"></script>
+        </div>
+
+        <div id="currency-container-id" class="currency-container" style="display: none;">
+            <div class="currency-calc-output-area">
+                <div id="currency-input-area-id" class="currency-input-area">
+                    <div data-currency-input-display id="display-currency-in" class="currency-input-result">33</div>
+                    <button id="change-currency-type-in" class="changeCurrencyTypeInputOutput">Canada - Dollar ⯆</button>
+                    <div id="inCurrencySymbol" style="display: inline-block; font-size: 20px;">$</div>
+                    <div id="currency-input-menu-id" class="currency-type-menu-in" style="display: none;">
+
+                    </div>
+                </div>
+                
+                <div id="currency-output-area-id" class="currency-output-area">
+                    <div data-currency-output-display id="display-currency-out" class="currency-output-result">0</div>
+                    <button id="change-currency-type-out" class="changeCurrencyTypeInputOutput">Canada - Dollar ⯆</button>
+                    <div id="outCurrencySymbol" style="display: inline-block; font-size: 20px;">$</div>
+                    <div id="currency-output-menu-id" class="currency-type-menu-out" style="display: none;">
+
+                    </div>
+                </div>
+            </div>
+            <button data-currency-convert>Convert</button>
+            <button class="clrBtn" data-currency-reset>C</button>
+            <button class="dltBtn" data-currency-delete>⌫</button>
+            <button data-currency-number>1</button>
+            <button data-currency-number>2</button>
+            <button data-currency-number>3</button>
+            <button data-currency-number>4</button>
+            <button data-currency-number>5</button>
+            <button data-currency-number>6</button>
+            <button data-currency-number>7</button>
+            <button data-currency-number>8</button>
+            <button data-currency-number>9</button>
+            <button></button>
+            <button data-currency-number>0</button>
+            <button data-currency-number>.</button>
+            <script src="currency_calculator/currencyCalc.js"></script>
+        </div>
+
+        <div id="date-container-id" class="date-container" style="display: grid;">
+
+            <div class="date-calc-input-area">
+                <label for="from-date-input">From</label>
+                <p id="from-date-input"></p>
+                <label for="to-date-input">To</label>
+                <p id="to-date-input"></p>
+
+                <label for="difference-output">Difference</label>
+                <p id="difference-output">Same Date</p>
+            </div>
+
+            <div class="date-calc-calendar-area">
+                <div id="calendar" style="display: none">  
+                    <div class="month-year-dsply">
+                        <p id="month-dsply"></p><p>,&nbsp;</p><p id="year-dsply" style="display: inline-block;"></p>
+                        <input id="year-input" type="number" style="display: none;">
+                    </div>
+    
+                    <div class="change-month-btns">
+                        <button id="prev-month"><img src="images/left.png"></button>
+                        
+                        <button id="next-month"><img src="images/right.png"></button>
+                    </div>
+    
+                    <table id="calendar-table" style="width:100%">
+                        <tr>
+                            <td data-weekName>Sun</td>
+                            <td data-weekName>Mon</td>
+                            <td data-weekName>Tue</td>
+                            <td data-weekName>Wed</td>
+                            <td data-weekName>Thu</td>
+                            <td data-weekName>Fri</td>
+                            <td data-weekName>Sat</td>
+                        </tr>
+                        <tr>
+                            <td class="aDay" data-day>Su</td>
+                            <td class="aDay" data-day>Mo</td>
+                            <td class="aDay" data-day>Tu</td>
+                            <td class="aDay" data-day>We</td>
+                            <td class="aDay" data-day>Th</td>
+                            <td class="aDay" data-day>Fr</td>
+                            <td class="aDay" data-day>Sa</td>
+                        </tr>
+                        <tr>
+                            <td class="aDay" data-day>Su</td>
+                            <td class="aDay" data-day>Mo</td>
+                            <td class="aDay" data-day>Tu</td>
+                            <td class="aDay" data-day>We</td>
+                            <td class="aDay" data-day>Th</td>
+                            <td class="aDay" data-day>Fr</td>
+                            <td class="aDay" data-day>Sa</td>
+                        </tr>
+                        <tr>
+                            <td class="aDay" data-day>Su</td>
+                            <td class="aDay" data-day>Mo</td>
+                            <td class="aDay" data-day>Tu</td>
+                            <td class="aDay" data-day>We</td>
+                            <td class="aDay" data-day>Th</td>
+                            <td class="aDay" data-day>Fr</td>
+                            <td class="aDay" data-day>Sa</td>
+                        </tr>
+                        <tr>
+                            <td class="aDay" data-day>Su</td>
+                            <td class="aDay" data-day>Mo</td>
+                            <td class="aDay" data-day>Tu</td>
+                            <td class="aDay" data-day>We</td>
+                            <td class="aDay" data-day>Th</td>
+                            <td class="aDay" data-day>Fr</td>
+                            <td class="aDay" data-day>Sa</td>
+                        </tr>
+                        <tr>
+                            <td class="aDay" data-day>Su</td>
+                            <td class="aDay" data-day>Mo</td>
+                            <td class="aDay" data-day>Tu</td>
+                            <td class="aDay" data-day>We</td>
+                            <td class="aDay" data-day>Th</td>
+                            <td class="aDay" data-day>Fr</td>
+                            <td class="aDay" data-day>Sa</td>
+                        </tr>
+                        <tr>
+                            <td class="aDay" data-day>Su</td>
+                            <td class="aDay" data-day>Mo</td>
+                            <td class="aDay" data-day>Tu</td>
+                            <td class="aDay" data-day>We</td>
+                            <td class="aDay" data-day>Th</td>
+                            <td class="aDay" data-day>Fr</td>
+                            <td class="aDay" data-day>Sa</td>
+                        </tr>
+                        
+                    </table>    
+                </div>
+
+                <div id="month-list" class="select-month" style="display: none;">
+                    <table id="month-list-table">
+                        <tr>
+                            <td data-month>Jan</td>
+                            <td data-month>Feb</td>
+                            <td data-month>Mar</td>
+                            <td data-month>Apr</td> 
+                        </tr>
+                        <tr>
+                            <td data-month>May</td>
+                            <td data-month>Jun</td>
+                            <td data-month>Jul</td>
+                            <td data-month>Aug</td> 
+                        </tr>
+                        <tr>
+                            <td data-month>Sep</td>
+                            <td data-month>Oct</td>
+                            <td data-month>Nov</td>
+                            <td data-month>Dec</td> 
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <script src="date_calculator/dateCalc.js"></script>
+        </div>
+
+        <script src="menu/menu.js"></script>
+    </div>
+</body>
+</html>

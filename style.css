@@ -1,0 +1,30 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    background: url("images/soundWave.gif") no-repeat; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.app-grid{
+    display: grid;
+    grid-template-rows: 50px auto;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px;
+    grid-auto-flow: column;
+    width: 400px;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+}
+

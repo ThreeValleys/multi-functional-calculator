@@ -1,0 +1,89 @@
+.temperature-container{
+    display: grid;
+    grid-template-columns: repeat(3, 133.3333px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+}
+
+.temperature-container button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid rgb(36, 0, 0);
+    outline: none;
+    background-color: rgba(255, 255, 255, .70);
+}
+
+.temperature-container button:hover{
+    background-color: rgba(255, 255, 255, .85);
+}
+
+.temperature-container button:active{
+    background-color: rgb(36, 0, 0);
+}
+
+.temperature-container .dltBtn:active{
+    background-color: red;
+}
+
+.temperature-container .clrBtn:active{
+    background-color: blue;
+}
+
+.temperature-container .eqlBtn:active{
+    background-color: green;
+}
+
+
+.temp-calc-output-area {
+    grid-column: 1 / -1;
+    width: 400px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, .75);
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    color:white;
+  }
+  
+  .temp-input-result{
+    font-size: 70px;
+    margin-left: 15px;
+  }
+
+  .temp-output-result{
+    font-size: 35px;
+    margin-left: 15px;
+  }
+
+  /*radio buttons */
+
+.temper-radio{
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.temper-radio-input{
+    margin-left: 20px;
+}
+
+#temp-input-area{
+    position: relative;
+}
+
+#temp-output-area{
+    margin-top: 30px;
+}
+
+#display-main{
+    grid-column: 1 / 5;
+    height: 75px;
+    font-size: 50px;
+}
+
+#display-secondary{
+    grid-column: 1 / 5;
+    height: 50px;
+    font-size: 25px;
+}
+
